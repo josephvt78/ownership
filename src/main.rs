@@ -29,4 +29,21 @@ fn main() {
     let s1 = String::from("hello");
     let s2 = s1.clone();
     println!("s1 = {}, s2 = {}", s1, s2);
+    
+    //Ownership and Functions
+    let s1 = String::from("hello");
+    takes_ownership(s1);
+    // println!("s1 = {}", s1); //s1 is already moved. can't borrow here
+
+    let x = 5;
+    makes_copy(x);
+    println!("x = {}", x);
+}
+
+fn makes_copy(p0: i32) {
+    println!("{p0} is the copy of {p0}");
+}
+
+fn takes_ownership(p0: String) {
+    println!("{}", p0);
 }
