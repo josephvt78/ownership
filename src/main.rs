@@ -13,4 +13,20 @@ fn main() {
         println!("{}", s);
     }                                                // the scope is now over, and s is no
                                                      // longer valid
+
+    //Variables and Data interacting with Move
+    let x = 5;
+    let _y = x;
+    println!("x = {}, _y = {}", x, _y);             // Works since integer is annotated with
+                                                    // Copy trait
+
+    let s1 = String::from("hello");
+    let _s2 = s1;
+
+    // println!("{s1}"); //can't reference s1 anymore as it is 'moved'
+
+    //Variables and Data interacting with Clone
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+    println!("s1 = {}, s2 = {}", s1, s2);
 }
